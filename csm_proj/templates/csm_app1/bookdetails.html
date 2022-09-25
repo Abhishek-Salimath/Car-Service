@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8" />
+    <title>Booking Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="robots" content="index, follow" />
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/r-c-min.css' %}" />
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/column-styles.css' %}" />
+
+    
+</head>
+<body>
+
+
+<r-c>
+    <c1-1>
+        
+        <h1>Booking Details</h1>
+    </c1-1>
+</r-c>
+
+<!-- Start layout -->
+<p>Thank you for booking your Car Service in Tars Cars</p>
+<p> Please Check your booking details below. Take a screenshot if needed</p>
+<r-c class="heading-boxes">
+    <c1-1 md1-3>
+        <h3>Personal Details</h3>
+        
+        <div>
+            <p>
+                Fullname:-{{d_book.fullname}}<br>
+                Address:-{{d_book.address}} <br>
+                Email:-{{d_book.email}} <br>
+                Contact Number:-{{d_book.phno}} <br>
+                City:-{{d_book.city}} <br>
+                Pincode:-{{d_book.pincode}}<br>
+
+            </p>
+        </div>
+    </c1-1>
+    <c1-1 md1-3>
+        <h3>Car Details </h3>
+        <div>
+            <p>
+                Register Number:-{{d_book.c_red}}<br>
+                Owner name:-{{d_book.c_own}} <br>
+                Model:-{{d_book.c_model}} <br>
+                Fuel type:-{{d_book.c_fuel}} <br>
+                Insurance Expiry Date:-{{d_book.c_insdate}} <br>
+
+            </p>
+        </div>
+    </c1-1>
+    <c1-1 md1-3>
+        <h3>Service Details</h3>
+        <div>
+            <p>
+                Delivery type:-{{d_book.s_del}}<br>
+                Service Date:-{{d_book.s_sdate}} <br>
+                Pickup Date:-{{d_book.s_pdate}} <br>
+                Service type:-{{d_book.s_type}} <br>
+                Other service:-{{d_book.s_oth}} <br>
+
+
+            </p>
+        </div>
+    </c1-1>
+</r-c>
+<!-- End layout -->
+<p> Our Technician team will get in touch with you soon </p>
+<p>Thank you once again and have a nice day</p>
+<p> Click the below link to go back to homepage</p>
+<a href="csm_app1/homepage.html" >Homepage</a>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load static %}
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'css/Form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popmes.css' %}">
+
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title> Service Booking Form </title> 
+</head>
+<body>
+    <h1>Tars<span style="color: red;">Cars</span></h1>
+    <div class="container">
+        <header>Booking Form</header>
+
+        <form action={% url 'form' %} method="POST">
+            {% csrf_token %}
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" name='fullname' placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Address</label>
+                            <input type="text" name="addr" placeholder="Permanent Address" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" name="mob" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>City</label>
+                            <select name="city" required>
+                                <option disabled selected>Select City</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Dharwad">Dharwad</option>
+                                <option value="Hubballi">Hubballi</option>
+                                <option value="Bagalkot">Bagalkot</option>
+                                <option value="Ballari">Ballari</option>
+                                <option value="Chikkaballapur">Chikkaballapur</option>
+                                <option value="Davanagere">Davanagere</option>
+                                <option value="Gadag">Gadag</option>
+                                <option value="Gulbarga">Gulbarga</option>
+                                <option value="Hassan">Hassan</option>
+                                <option value="Haveri">Haveri</option>
+                                <option value="Hospet">Hospet</option>
+                                <option value="Koppal">Koppal</option>
+                                <option value="Mysore">Mysore</option>
+                                <option value="Raichur">Raichur</option>
+                                <option value="Shimoga">Shimoga</option>
+                                <option value="Udupi">Udupi</option>
+                                <option value="Yellapur">Yellapur</option>
+
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>PinCode</label>
+                            <input type="number" name="pin" placeholder="PinCode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Car Details</Details></span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Registration Number</label>
+                            <input type="text" name="regno" placeholder="Enter Reg No" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Owner Name</label>
+                            <input type="text" name="owner" placeholder="Enter Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Car Model</label>
+                            <input type="text" name="model" placeholder="Enter Car Model" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Fuel Type</label>
+                            <select name="fuel" required>
+                                <option disabled selected>Fuel Type</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Bio-Diesel">Bio-Diesel</option>
+                                <option value="CNG">CNG</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Car Color</label>
+                            <input type="text" name="color"  placeholder="Car Color" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Insurance Expiry Date</label>
+                            <input type="date" name="insurdate" placeholder="Enter expiry date" required>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+         
+            <div class="form second">
+                <div class="details family">
+                    <span class="title">Car Service</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Delivery Type</label>
+                            <select name="delivery" required>
+                                <option disabled selected>Delivery Type</option>
+                                <option value="Pickup Service">Pickup Service</option>
+                                <option value="Drop Service" >Drop Service</option>
+                            </select>
+                        </div>
+
+                       
+                        <div class="input-field">
+                            <label>Service Date</label>
+                            <input type="date" name="servdate" placeholder="Date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pickup Date</label>
+                            <input type="date" name="pickdate" placeholder="Time" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Service Type</label>
+                            <select name="servtype" required>
+                                <option disabled selected>--Type--</option>
+                                <option >General Service</option>
+                                <option >Fuel Service</option>
+                                <option>Interim Service</option>
+                                <option>Battery Check and Service</option>
+                                <option>Full Car Service</option>
+                                <option>Denting and Painting</option>
+                                <option>Major Car Service</option>
+                                <option>Accidental Repairs</option>
+                                
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Other Services</label>
+                            <select name="otherserv" required>
+                                <option disabled selected>--Type--</option>
+                                <option>Tyre Replace</option>
+                                <option>Sparkplug, Clutch and Brake Service</option>
+                                <option>Windshield Replace</option>
+                                <option>Engine Replace</option>
+                                <option>AC service and Replace</option>
+                                <option>Car Wash</option>
+                                <option>Interior Cleaning</option>
+                                <option>Car Heater Service</option>
+                                <option>Oil Replace</option>
+                                <option>Other/Custom Service</option>
+                            </select>
+                        </div>
+
+                   
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText" style="margin-right:9px ;">Back</span>
+                        </div>
+                        
+                        <button class="sumbit" id="openModalBtn">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/Form.js' %}"></script>
+
+
+
+    
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/puvaffet.json"
+    trigger="loop"
+    delay="1000"
+    colors="primary:#121331,secondary:#3080e8"
+    stroke="55"
+    style="width:62px;height:62px">
+</lord-icon>
+
+</body>
+</html>

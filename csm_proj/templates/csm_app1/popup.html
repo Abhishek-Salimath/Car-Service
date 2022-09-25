@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/popmes.css' %}">
+    <title></title>
+</head>
+<body style="background-image:linear-gradient(to bottom right,#f0f8ff,#C0C0C0	 )">
+    
+
+
+    <div class="modal-wrapper" id="modal">
+        <div class="modal">
+          <div class="modal-header">
+              <div class="popimg">
+                  <img src="{% static 'images/404-tick.png' %}">
+              </div>
+          </div>
+          <div class="modal-body">
+            <h4>Thank you!</h4>
+            <p>Thank you for booking your service in Tars Cars.<br>Your booking details are recorded.<br>Our technician will get in contact with you soon.<br>Have a nice day!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button id="closeModalBtn"><a href="{% url 'homepage' %}" style="color:whitesmoke ;">  Back to home </a></button>
+          </div>
+        </div>
+      </div>
+
+
+      <script type="text/javascript">
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const modal = document.getElementById('modal');
+        
+        function open()  {
+          modal.classList.add('open');
+        }
+        
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('open');
+        });
+        
+        open();
+        
+        </script>
+
+
+</body>
+</html>
